@@ -1,20 +1,37 @@
-<div>
-  <h1>Security Web</h1>
+<div class="padding-lg container-fluid with-navbar parallax-header" data-parallax="scroll" data-image-src="front/img/cabezal/portada_living2.jpg">
+  <div class="container">
+      <div class="row">
 
-  <div>
-    <form>
-      <div>
-        <label>Usuario</label>
-        <input type="text"/>
+
+          <div class="col-lg-10 col-md-10 col-lg-offset-1 col-md-offset-1 spa-top-lg bg-white well">
+              <h4 class="text-black text-uppercase text-center"><strong>Ingresá a tu cuenta</strong></h4>
+              <form method="POST" action="">
+                  <div class="row spa-bot-lg">
+                      <div class="col-lg-offset-2 col-md-offset-2 col-sm-offset-2 col-lg-8 col-md-8 col-sm-8">
+                          <div class="form-group form-group-lg">
+                              <label for="correo" class="text-semibold">Email</label>
+                              <input type="email"
+                                     id="correo"
+                                     name="email"
+                                     class="form-control"
+                                     placeholder="Email:">
+                          </div>
+                          <div class="form-group form-group-lg">
+                              <label for="contrasenia" class="text-semibold">Contraseña</label>
+                              <input type="password"
+                                     id="contrasenia"
+                                     name="password"
+                                     class="form-control"
+                                     placeholder="Contraseña:">
+                          </div>
+                          <button type="submit"
+                                  class="btn btn-secondary btn-block">
+                              CONTINUAR
+                          </button>
+                      </div>
+                  </div>
+              </form>
+          </div>
       </div>
-      <div>
-        <label>Password</label>
-        <input type="password"/>
-      </div>
-      <div>
-        <input type="submit">
-      </div>
-    </form>
   </div>
 </div>
-
