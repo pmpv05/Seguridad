@@ -1,0 +1,26 @@
+.nav{
+    background-color: #161616;
+}
+
+ul{
+    text-align: right;
+    display: inline-block;
+    list-style-type: none;
+    height: 100%;
+    margin: 0;
+}
+li {
+    height: 100%;
+    display: inline-block;
+    margin-left: 10px;
+}
+
+a{
+    color: #f3f3f3;
+    text-decoration: none;
+}
+
+a > h2 {
+    color: #f3f3f3;
+    margin-left: 15px;
+}
