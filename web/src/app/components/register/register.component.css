@@ -20,20 +20,20 @@
  .btn-secondary:focus,
  .btn-secondary.focus {
    color: #fff;
-   background-color: #d97116;
-   border-color: #d97116;
+   background-color: #507fd2;
+   border-color: #507fd2;
  }
  .btn-secondary:hover {
    color: #fff;
-   background-color: #d97116;
-   border-color: #d97116;
+   background-color: #507fd2;
+   border-color: #507fd2;
  }
  .btn-secondary:active,
  .btn-secondary.active,
  .open > .dropdown-toggle.btn-secondary {
    color: #fff;
-   background-color: #d97116;
-   border-color: #d97116;
+   background-color: #507fd2;
+   border-color: #507fd2;
  }
  .btn-secondary:active:hover,
  .btn-secondary.active:hover,
@@ -45,8 +45,8 @@
  .btn-secondary.active.focus,
  .open > .dropdown-toggle.btn-secondary.focus {
    color: #fff;
-   background-color: #d97116;
-   border-color: #d97116;
+   background-color: #507fd2;
+   border-color: #507fd2;
  }
  .btn-secondary:active,
  .btn-secondary.active,
