@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, ChangeDetectorRef } from '@angular/core';
 import { ApiService } from '../../services/api.service';
 import { Router } from '@angular/router';
 import { UsuarioModel } from 'src/app/models/usuario.model';
+import { NavbarComponent } from '../navbar/navbar.component';
 
 @Component({
   selector: 'app-login',
@@ -20,16 +21,9 @@ export class LoginComponent {
   }
 
   login() {
-    console.log(this.emailUsuario);
-    console.log(this.passUsuario);
     this.usuarioObj.email = this.emailUsuario;
     this.usuarioObj.password = this.passUsuario;
 
-    this.apiService.login(this.usuarioObj)
-      .subscribe(resp => {
-
-        console.log(resp);
-      });
-
+    this.apiService.login(this.usuarioObj);
   }
 }

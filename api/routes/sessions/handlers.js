@@ -2,6 +2,7 @@ const jwt = require('jsonwebtoken');
 const User = require('../../models/user');
 
 const find = (req, res) => {
+  debugger;
   // Find email
   User.findOne({ email: req.body.email }, (err, user) => {
     if (err) {

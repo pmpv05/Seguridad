@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { UsuarioModel } from '../models/usuario.model';
-import { map } from 'rxjs/operators';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +14,7 @@ export class ApiService {
 
   userToken: string;
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private router: Router) {
     this.leerToken();
   }
 
@@ -24,24 +24,31 @@ export class ApiService {
 
   login(usuario: UsuarioModel) {
 
+    const authData = {
+      email: usuario.email,
+      password: usuario.password
+    };
+
     return this.http.post(
       `${this.url}/sessions`,
-      usuario
-    );
+      authData
+    ).subscribe
+      (resp => {
+        this.guardarToken(resp['token']);
+        console.log(resp);
 
+        this.router.navigateByUrl('/file');
+      },
+        err => {
+          alert(err.error.error);
+          console.log(err);
+        });
   }
 
-  private guardarToken(idToken: string) {
+  private guardarToken(xToken: string) {
 
-    this.userToken = idToken;
-    localStorage.setItem('token', idToken);
-
-    let hoy = new Date();
-    hoy.setSeconds(3600);
-
-    localStorage.setItem('expira', hoy.getTime().toString());
-
-
+    this.userToken = xToken;
+    localStorage.setItem('token', xToken);
   }
 
   leerToken() {
@@ -53,7 +60,6 @@ export class ApiService {
     }
 
     return this.userToken;
-
   }
 
 
@@ -61,18 +67,8 @@ export class ApiService {
 
     if (this.userToken.length < 2) {
       return false;
-    }
-
-    const expira = Number(localStorage.getItem('expira'));
-    const expiraDate = new Date();
-    expiraDate.setTime(expira);
-
-    if (expiraDate > new Date()) {
-      return true;
     } else {
-      return false;
+      return true;
     }
-
-
   }
 }
