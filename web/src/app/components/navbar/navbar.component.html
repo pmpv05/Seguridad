@@ -5,15 +5,7 @@
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarText">
-    <ul class="navbar-nav mr-auto">
-
-      <li class="nav-item" *ngIf="!estaAutenticado">
-        <a class="nav-link" [routerLink]="['/login']" routerLinkActive="active">LOGIN</a>
-      </li>
-      <li class="nav-item" *ngIf="estaAutenticado">
-        <a class="nav-link" [routerLink]="['/file']" routerLinkActive="active">ARCHIVO</a>
-      </li>
-    </ul>
+    <ul class="navbar-nav mr-auto"></ul>
 
     <span class="navbar-text">
       <button (click)="salir()" *ngIf="estaAutenticado" class="btn btn-danger">
