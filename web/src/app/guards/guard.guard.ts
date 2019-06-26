@@ -7,15 +7,13 @@ import { ApiService } from '../services/api.service';
 })
 export class AuthGuard implements CanActivate {
 
-  constructor(private apiService: ApiService,
-    private router: Router) { }
+  constructor(private apiService: ApiService) { }
 
   canActivate(): boolean {
 
     if (this.apiService.estaAutenticado()) {
       return true;
     } else {
-      this.router.navigateByUrl('/login');
       return false;
     }
   }
