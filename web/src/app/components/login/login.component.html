@@ -14,8 +14,8 @@
                             </div>
                             <div class="form-group form-group-lg">
                                 <label for="contrasenia" class="text-semibold">Contraseña</label>
-                                <input type="password" id="contrasenia" name="password" class="form-control"
-                                    [(ngModel)]="passUsuario" placeholder="Contraseña:">
+                                <input type="password" name="password" class="form-control" [(ngModel)]="passUsuario"
+                                    placeholder="Contraseña:">
                             </div>
                             <button type="submit" class="btn btn-secondary btn-block"
                                 (click)="login(); $event.preventDefault();">
