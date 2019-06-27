@@ -19,7 +19,7 @@ const find = (req, res) => {
               name: user.name
             },
             'security',
-            { expiresIn: '2h' },
+            { expiresIn: '1h' },
           );
           res.status(200).send(res.json({ token, message: 'Autenticado' }));
           return;

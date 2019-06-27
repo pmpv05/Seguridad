@@ -14,4 +14,15 @@ export class FilesComponent implements OnInit {
   ngOnInit() {
   }
 
+  cifrar() {
+  }
+
+  estaCifrado() {
+  }
+
+  descifrar() {
+  }
+
+  firmar() {
+  }
 }
