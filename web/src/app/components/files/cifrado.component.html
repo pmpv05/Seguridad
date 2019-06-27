@@ -1,0 +1,34 @@
+<app-navbar></app-navbar>
+
+<div class="padding-lg container-fluid with-navbar parallax-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 spa-top-lg bg-white well">
+                <form>
+                    <div class="row spa-bot-lg">
+                        <div class="offset-login col-lg-7">
+                            <h4 class="text-black text-uppercase text-center"><strong>Manejador de Archivos</strong>
+                            </h4>
+                            <div class="form-group form-group-lg padding-top-md">
+                                <b>Archivo: </b><input type="file">
+                            </div>
+                            <div class="form-group form-group-lg">
+                                <b>Clave: </b><input type="text" class="width-100" [(ngModel)]="clave"
+                                    [ngModelOptions]="{standalone: true}">
+                            </div>
+                            <button (click)="cifrar()" class="btn btn-secondary btn-block">
+                                CIFRAR
+                            </button>
+                            <button (click)="descifrar()" class="btn btn-secondary btn-block">
+                                DESCIFRAR
+                            </button>
+                            <button (click)="firmar()" class="btn btn-secondary btn-block spa-top-lg">
+                                FIRMAR
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
