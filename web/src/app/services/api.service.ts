@@ -44,7 +44,7 @@ export class ApiService {
           timer: 1000
         })
 
-        this.router.navigateByUrl('/file');
+        this.router.navigateByUrl('/cifrado');
       },
         err => {
           Swal.fire({

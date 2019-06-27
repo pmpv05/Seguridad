@@ -3,20 +3,22 @@ import { NgModule } from '@angular/core';
 
 import { APP_ROUTING } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { FilesComponent } from './components/files/files.component';
+import { CifradoComponent } from './components/files/cifrado.component';
 import { LoginComponent } from './components/login/login.component';
-import { RegisterComponent } from './components/register/register.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { FirmaComponent } from './components/firma/firma.component';
+import { VerificarfirmaComponent } from './components/verificarfirma/verificarfirma.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    FilesComponent,
+    CifradoComponent,
     LoginComponent,
-    RegisterComponent,
-    NavbarComponent
+    NavbarComponent,
+    FirmaComponent,
+    VerificarfirmaComponent
   ],
   imports: [
     BrowserModule,
