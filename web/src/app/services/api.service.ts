@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { UsuarioModel } from '../models/usuario.model';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 
 @Injectable({
   providedIn: 'root'
@@ -36,11 +37,20 @@ export class ApiService {
       (resp => {
         this.guardarToken(resp['token']);
         console.log(resp);
+        Swal.fire({
+          type: 'success',
+          title: 'Autenticación exitosa!',
+          showConfirmButton: false,
+          timer: 1000
+        })
 
         this.router.navigateByUrl('/file');
       },
         err => {
-          alert(err.error.error);
+          Swal.fire({
+            type: 'error',
+            title: 'Correo y/o contraseña incorrecta'
+          });
           console.log(err);
         });
   }

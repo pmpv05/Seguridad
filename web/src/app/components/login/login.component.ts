@@ -3,6 +3,7 @@ import { ApiService } from '../../services/api.service';
 import { Router } from '@angular/router';
 import { UsuarioModel } from 'src/app/models/usuario.model';
 
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -14,6 +15,7 @@ export class LoginComponent {
   passUsuario: string;
 
   usuarioObj: UsuarioModel = new UsuarioModel();
+
 
   constructor(private apiService: ApiService, private router: Router) {
 
