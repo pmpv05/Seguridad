@@ -5,7 +5,17 @@
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarText">
-    <ul class="navbar-nav mr-auto"></ul>
+    <ul class="navbar-nav mr-auto" *ngIf="estaAutenticado">
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/cifrado']" routerLinkActive="active">Cifrado</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/firma']" routerLinkActive="active">Firma</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/verificarFirma']" routerLinkActive="active">Verificar Firma</a>
+      </li>
+    </ul>
 
     <span class="navbar-text">
       <button (click)="salir()" *ngIf="estaAutenticado" class="btn btn-outline-danger">
