@@ -33,9 +33,7 @@ export class FirmaComponent implements OnInit {
     }
   }
 
-  firma() {
-    this.apiService.generarClaves();
-  } obtenerNombre(fullPath: string) {
+  obtenerNombre(fullPath: string) {
     var startIndex = (fullPath.indexOf('\\') >= 0 ? fullPath.lastIndexOf('\\') : fullPath.lastIndexOf('/'));
     var filename = fullPath.substring(startIndex);
     if (filename.indexOf('\\') === 0 || filename.indexOf('/') === 0) {

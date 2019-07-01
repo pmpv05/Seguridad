@@ -42,7 +42,7 @@ export class ApiService {
           title: 'Autenticación exitosa!',
           showConfirmButton: false,
           timer: 1000
-        })
+        });
 
         this.router.navigateByUrl('/cifrado');
       },
@@ -53,10 +53,6 @@ export class ApiService {
           });
           console.log(err);
         });
-  }
-
-  generarClaves() {
-    this.http.get(`${this.url}/keys`).subscribe(resp => { return { privateKey: resp['exportedPrivate'], publicKey: resp['exportedPublic'] } });
   }
 
   private guardarToken(xToken: string) {

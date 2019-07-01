@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { JSEncrypt } from 'jsencrypt';
 import * as crypto from 'crypto-js';
+import Swal from 'sweetalert2';
+
 
 @Component({
   selector: 'app-verificarfirma',
@@ -105,10 +107,16 @@ export class VerificarfirmaComponent implements OnInit {
         var verified = verify.verify(utf8_to_b64(cryp), firma, criptoAccion);
 
         if (verified) {
-          alert('Verificado!');
+          Swal.fire({
+            type: 'success',
+            title: 'Verificado.'
+          });
         }
         else {
-          alert('No verifica.');
+          Swal.fire({
+            type: 'error',
+            title: 'No verifica.'
+          });
         }
       }
       reader.readAsDataURL(file.files[0]);
