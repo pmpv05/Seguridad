@@ -55,6 +55,10 @@ export class ApiService {
         });
   }
 
+  generarClaves() {
+    this.http.get(`${this.url}/keys`).subscribe(resp => { return { privateKey: resp['exportedPrivate'], publicKey: resp['exportedPublic'] } });
+  }
+
   private guardarToken(xToken: string) {
 
     this.userToken = xToken;

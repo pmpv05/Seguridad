@@ -7,18 +7,18 @@
         <form>
           <div class="row spa-bot-lg">
             <div class="offset-login col-lg-7">
-              <h4 class="text-black text-uppercase text-center"><strong>Manejador de Archivos</strong>
+              <h4 class="text-black text-uppercase text-center"><strong>Verificar Firma de Archivos</strong>
               </h4>
               <div class="form-group form-group-lg padding-top-md">
-                <b>Archivo: </b><input type="file">
+                <b>Archivo: </b><input type="file" id="file">
               </div>
               <div class="form-group form-group-lg">
-                <b>Firma: </b><input type="file">
+                <b>Clave pública: </b><input type="text" id="key">
               </div>
               <div class="form-group form-group-lg">
-                <b>Usuario que firmó: </b><select class="width-100"></select>
+                <b>Firma: </b><input type="text" id="firma">
               </div>
-              <button class="btn btn-secondary btn-block spa-top-lg">
+              <button class="btn btn-secondary btn-block spa-top-lg" (click)="verificar()">
                 VERIFICAR FIRMA
               </button>
             </div>

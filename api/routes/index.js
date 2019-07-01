@@ -1,5 +1,6 @@
 const users = require('./users');
 const sessions = require('./sessions');
+const files = require('./files');
 
 const resourceRoutes = [users, sessions];
 
