@@ -18,14 +18,14 @@ const userSchema = new mongoose.Schema(
 );
 
 userSchema.methods.comparePassword = async function (oldPassword, newPassword) {
-  //return bcrypt.compare(oldPassword, newPassword);
-  return crypto.compare(oldPassword, newPassword);
+  return bcrypt.compare(oldPassword, newPassword);
+  //return crypto.compare(oldPassword, newPassword);
 };
 
 const hashPassword = async function (next) {
   const user = this;
-  //user.password = await bcrypt.hash(user.password, saltRounds);
-  user.password = await crypto.SHA256(user.password);
+  user.password = await bcrypt.hash(user.password, saltRounds);
+  //user.password = await crypto.SHA256(user.password);
   return next();
 };
 
